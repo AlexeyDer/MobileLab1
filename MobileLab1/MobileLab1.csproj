@@ -5,4 +5,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Microsoft.VisualStudio.Services.NuGet.CredentialProvider" />
+    <None Remove="NuGet.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Services.NuGet.CredentialProvider" Version="0.37.0" />
+    <PackageReference Include="NuGet.exe" Version="3.4.3" />
+  </ItemGroup>
 </Project>
