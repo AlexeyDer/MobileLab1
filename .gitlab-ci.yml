@@ -1,8 +1,14 @@
-build:
-    script:
-    - 'cd MobileLab1'
-    - 'nuget.exe restore'
-    - '"/Library/Frameworks/Mono.framework/Versions/Current/msbuild.exe" MobileLab1.sln'
-    artifacts:
-        paths:
-        - 'MobileLab1/MobileLab1/bin/Debug/netcoreapp3.1'
+stages:
+  - build  
+
+build_job:
+  stage: build
+  only:
+    - branches
+  script:
+    - 'cd MobileLab1
+    - '"C:\Users\hotte\Documents\mobilelab1\nuget.exe" restore'
+    - '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" MobileLab1.sln'  
+  artifacts:
+    paths:
+      - 'MobileLab1\MobileLab1\bin\Debug\MobileLab1.exe'
