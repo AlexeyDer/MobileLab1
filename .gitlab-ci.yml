@@ -1,14 +1,8 @@
-stages:
-- build  
-
-build_job:
-stage: build
-only:
-- branches
-script:
-- 'cd MobileLab1'
-- '"/Users/alexeyder/Projects/MobileLab1/nuget.exe" restore'
-- '"/Library/Frameworks/Mono.framework/Versions/Current/msbuild.exe" MobileLab1.sln'
+build:
+    script:
+    - 'cd MobileLab1'
+    - '"nuget.exe" restore'
+    - '"/Library/Frameworks/Mono.framework/Versions/Current/msbuild.exe" MobileLab1.sln'
 artifacts:
-paths:
-- 'MobileLab1/MobileLab1/bin/Debug/MobileLab1.exe'
+    script:
+    - 'MobileLab1/MobileLab1/bin/Debug/MobileLab1.exe'
